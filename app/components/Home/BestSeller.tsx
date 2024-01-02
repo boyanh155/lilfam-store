@@ -15,10 +15,8 @@ const BestSeller = (props: Props) => {
                 <div className='grid grid-rows-1 grid-cols-3 gap-20'>
                     {
                         bestSellerData.map((v, i) =>
-                            <div key={i} style={{
-                                borderWidth:'1px'
-                            }} className="card col-span-1 bg-base-100 shadow-xl px-4 pt-10 border-dark-main rounded-3xl">
-                                <div className=" bg-dark-main h-52 rounded-xl flex justify-center">
+                            <div key={i} className="col-span-1 landing_card">
+                                <div className="  h-52 img_wrapper">
                                     <Image src={v.img} alt="Shoes" className='content-center align-middle ' />
                                 </div>
                                 <div className="card-body items-center text-center">

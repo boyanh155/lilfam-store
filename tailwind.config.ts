@@ -15,7 +15,7 @@ const config: Config = {
       },
       colors: {
         'dark-red': '#C83E4D',
-        'dark-main': '#231720',
+        'dark-main': '#54442B',
         'light-main': '#ffffff'
       },
       textColor: {

@@ -2,12 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 :root {
-    /* --foreground-rgb: 0, 0, 0; */
+    /* --foreground-rgb:0, 0, 0; */
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme:dark) {
      :root {
-        /* --foreground-rgb: 255, 255, 255; */
+        /* --foreground-rgb:255, 255, 255; */
     }
 }
 
@@ -15,8 +15,8 @@ html {}
 
 body {
     overflow-x: hidden;
-    /* color: rgb(var(--foreground-rgb)); */
-    /* background: linear-gradient( to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb)); */
+    /* color:rgb(var(--foreground-rgb)); */
+    /* background:linear-gradient( to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb)); */
 }
 
 body .content-container {
@@ -29,5 +29,21 @@ body .content-container {
 @layer base {
     h1 {
         @apply text-2xl font-extrabold mb-3;
+    }
+    .rounded-bt {
+        @apply rounded-full py-2 px-6
+    }
+    .landing_card {
+        @apply bg-base-100 px-4 pt-10 pb-5 shadow-xl card border-dark-main rounded-3xl border
+    }
+    .landing_card>.img_wrapper {
+        @apply flex justify-center content-center bg-dark-main rounded-xl
+    }
+    .landing_card .yellow-button{
+        @apply bg-[#FFCC00] border text-black border-dark-main
+    }
+    /* Button with greater icon in the right */
+    .button-arrow {
+        @apply border transition-all hover:opacity-40 cursor-pointer rounded-full absolute bottom-3 right-5 after:content-[""] after:block after:absolute after:right-4 after:top-3 after:transition-all after:h-2 after:w-2 after:hover:translate-x-1 after:border-t after:border-r after:rotate-45
     }
 }
