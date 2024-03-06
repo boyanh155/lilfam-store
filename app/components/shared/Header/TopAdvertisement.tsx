@@ -1,26 +1,19 @@
-import React from 'react'
+import React from "react";
 
-type Props = {}
+type Props = {};
 
 const TopAdvertisement = (props: Props) => {
-    return (
-        <div className='w-screen bg-dark-red text-center m-auto  h-10 relative animate-ben-thanh-market-background-changing'>
-            <span style={{
-                right: '-28%',
-            }} className=' block text-md text-white font-bold pt-2.5 tracking-wide absolute whitespace-nowrap animate-ben-thanh-market-text-runner'>
-                FREE SHIPPING FOR BILLS FROM 200K
-            </span>
-            <span style={{
-                right: '-40%',
-                animationDelay: '4s',
-                MozAnimationDelay: '4s',
-                WebkitAnimationDelay: '4s',
-            }} className=' block text-md text-white font-bold pt-2.5 tracking-wide absolute whitespace-nowrap animate-ben-thanh-market-text-runner'>
-                {/* FREE SHIPPING FOR BILLS FROM 200K */}
-                BLACK FRIDAY UPTO 70% FOR &apos;LILFAM&apos; COLLECTION
-            </span>
-        </div>
-    )
-}
+  return (
+    <div className="w-screen bg-dark-red text-center overflow-hidden flex flex-col justify-center item-center h-10  animate-ben-thanh-market-background-changing">
+      <span className=" text-center block text-md top-[14px] relative text-white font-bold pt-2.5 tracking-wide animate-ben-thanh-market-text-jumper">
+        FREE SHIPPING FOR BILLS FROM 200K
+      </span>
+      <span className=" text-center block text-md top-[14px] relative text-white font-bold pt-2.5 tracking-wide animate-ben-thanh-market-text-jumper">
+        {/* FREE SHIPPING FOR BILLS FROM 200K */}
+        BLACK FRIDAY UPTO 70% FOR &apos;LILFAM&apos; COLLECTION
+      </span>
+    </div>
+  );
+};
 
-export default TopAdvertisement
+export default TopAdvertisement;

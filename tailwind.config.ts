@@ -36,11 +36,21 @@ const config: Config = {
           "50%": { "mix-blend-mode": "luminosity" },
           "100%": { "mix-blend-mode": "difference" },
         },
+        "bt-text-jumper": {
+          "0%,30%": { transform: "translateY(0)", animationDelay: "3s" },
+          // "30%": { transform: "translateY(0)" },
+
+          // "40%": { transform: "translateY(-34px)" },
+          // "60%": { transform: "translateY(-34px)" },
+          "70%,100%": { transform: "translateY(-34px)", animationDelay: "4s" },
+        },
       },
       animation: {
-        "ben-thanh-market-text-runner": "bt-text-runner 10s infinite linear",
+        "ben-thanh-market-text-runner": "bt-text-runner 12s infinite linear",
         "ben-thanh-market-background-changing":
           "bt-background-changing 20s infinite linear",
+        "ben-thanh-market-text-jumper":
+          "bt-text-jumper 2s infinite alternate linear",
       },
     },
     letterSpacing: {
