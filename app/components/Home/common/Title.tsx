@@ -1,17 +1,20 @@
-import React from 'react'
+import React from "react";
 
 type Props = {
-    title: string,
-    direction: 'text-center' | 'text-start' | 'text-end'
-}
+  title: string;
+  startDirection?: "text-start" | "text-center";
+};
 
-const Title = ({ title, direction = 'text-start' }: Props) => {
-    return (
-        <div className={`w-full ${direction} pb-10 pt-16`}>
+const Title = ({ title, startDirection }: Props) => {
+  return (
+    <div
+      className={`w-full ${`md:${
+        startDirection || `text-start`
+      }`}  text-center pb-10 pt-16`}
+    >
+      <p className="text-2xl font-bold uppercase text-black">{title}</p>
+    </div>
+  );
+};
 
-            <p className='text-2xl font-bold uppercase text-black'>{title}</p>
-        </div>
-    )
-}
-
-export default Title
+export default Title;

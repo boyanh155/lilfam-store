@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { menuData } from './menuData/menu'
 import { usePathname, useRouter } from 'next/navigation'
 import Dropdown from '../../Home/Dropdown'
-import { dropDownCol } from '../../Home/dropdownData/data'
+import { dropDownCol } from '../../Home/dummyData/dropdown'
 import NavbarItem from './NavbarItem'
 
 

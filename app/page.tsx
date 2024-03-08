@@ -1,10 +1,4 @@
-import HomeComponent from "@/app/pages/Home"
+import HomePage from "@/app/pages/Home";
 export default function Home() {
-  return (
-    <main>
-      {/* <NavBar/> */}
-
-        <HomeComponent />
-    </main>
-  )
+  return <HomePage />;
 }

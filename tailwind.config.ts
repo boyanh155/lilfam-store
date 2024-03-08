@@ -57,17 +57,9 @@ const config: Config = {
       widest: ".25em",
     },
     screens: {
-      "sm-screen": {
-        min: "360px",
-        max: "639px",
-      },
-      "md-screen": {
-        min: "640px",
-        max: "1023px",
-      },
-      "lg-screen": {
-        min: "1024px",
-      },
+      sm: "360px",
+      md: "640px",
+      lg: "1024px",
     },
   },
 

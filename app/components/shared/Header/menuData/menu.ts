@@ -1,4 +1,4 @@
-import { dropDownCol, dropDownSportData, dropdownSexualData } from "@/app/components/Home/dropdownData/data"
+import { dropDownCol, dropDownSportData, dropdownSexualData } from "@/app/components/Home/dummyData/dropdown"
 
 export type MenuItem = {
     name: string,

@@ -1,5 +1,5 @@
 import React from 'react'
-import { dropDownCol } from './dropdownData/data'
+import { dropDownCol } from './dummyData/dropdown'
 import Link from 'next/link'
 
 type Props = {
@@ -10,7 +10,7 @@ const Dropdown = ({ menuData }: Props) => {
     return (
         <div className='absolute left-0 right-0 z-50 w-screen bg-white py-14'>
 
-            <div className={` content-container grid sm-screen:grid-cols-1 md-screen:grid-cols-2 lg-screen:grid-cols-4 `}>
+            <div className={` content-container grid grid-cols-2 lg:grid-cols-4 `}>
                 {menuData.map((v, index) => <div
                     key={index}
                     className='col-span-1'
