@@ -1,35 +1,57 @@
 import React from "react";
-import { bestSellerData } from "./bestsellerData/data";
-import Image from "next/image";
-import Title from "./common/Title";
 
+import userIcon from "@/app/assets/imgs/icons/icon-user.svg";
+import heartIcon from "@/app/assets/imgs/icons/icon-heart.svg";
+import cartIcon from "@/app/assets/imgs/icons/icon-cart.svg";
+import Image from "next/image";
 type Props = {};
 
-const BestSeller = (props: Props) => {
+const HeaderButtonGroup = (props: Props) => {
   return (
-    <div className="flex flex-col content-container pt-14 ">
-
-      <Title title="best seller" />
-
-      <div className="grid row-span-1 mt-14 grid-rows-1 grid-cols-1 gap-20 md:grid-cols-3">
-        {bestSellerData.map((v, i) => (
-          <div key={i} className="col-span-1 landing_card">
-            <div className="  h-52 img_wrapper">
-              <Image
-                src={v.img}
-                alt="Shoes"
-                className="content-center align-middle "
-              />
-            </div>
-            <div className="card-body items-center text-center">
-              <p className="card-title text-base font-medium">{v.name}</p>
-              <p className="text-sm text-zinc-400">{v.category}</p>
-            </div>
-          </div>
-        ))}
+    <div className="grid grid-cols-3 w-full">
+      <div className="col-span-2 flex bg-zinc-100 rounded-box px-4 py-1 h-9">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-5 h-full"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+          />
+        </svg>
+        <input
+          style={{
+            marginLeft: "-5px",
+          }}
+          type="text"
+          className="input bg-transparent h-full text-dark-main"
+          placeholder="Search"
+        />
+      </div>
+      <div className="col-span-1 grid grid-cols-3 content-center justify-items-center">
+        <Image
+          className="col-span-1 hover:opacity-60 cursor-pointer transition-opacity text-dark-main"
+          src={userIcon}
+          alt="user"
+        />
+        <Image
+          className="col-span-1 hover:opacity-60 cursor-pointer transition-opacity text-dark-main"
+          src={heartIcon}
+          alt="heart"
+        />
+        <Image
+          className="col-span-1 hover:opacity-60 cursor-pointer transition-opacity text-dark-main"
+          src={cartIcon}
+          alt="cart"
+        />
       </div>
     </div>
   );
 };
 
-export default BestSeller;
+export default HeaderButtonGroup;

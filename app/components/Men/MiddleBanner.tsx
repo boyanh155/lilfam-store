@@ -1,12 +1,11 @@
 import React from "react";
 import PlaceHolderImage from "../Common/PlaceHolderImage";
-import { object } from "zod";
 
 type Props = {};
 
-const HeroBanner = (props: Props) => {
+const MiddleBanner = (props: Props) => {
   return (
-    <div className="bg-dark-main w-full fluid h-[415px] rounded-2xl">
+    <div className="w-full bg-dark-main h-[500px] mt-24 rounded-2xl">
       <PlaceHolderImage
         style={{
           width: "100%",
@@ -18,4 +17,4 @@ const HeroBanner = (props: Props) => {
   );
 };
 
-export default HeroBanner;
+export default MiddleBanner;

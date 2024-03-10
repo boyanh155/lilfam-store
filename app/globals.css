@@ -12,7 +12,8 @@
   }
 }
 
-html {}
+html {
+}
 
 body {
   overflow-x: hidden;
@@ -22,14 +23,14 @@ body {
 
 body .content-container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1300px;
   clear: left;
   margin: 0 auto;
   padding-left: 0.75rem;
   padding-right: 0.75rem;
 }
 
-.content-container-fluid {
+.fluid {
   padding-left: 0;
   padding-right: 0;
 }
@@ -47,7 +48,7 @@ body .content-container {
     @apply bg-base-100 px-4 pt-10 pb-5 card border-dark-main rounded-3xl border;
   }
 
-  .landing_card>.img_wrapper {
+  .landing_card > .img_wrapper {
     @apply flex justify-center content-center bg-dark-main rounded-xl;
   }
 
@@ -57,6 +58,6 @@ body .content-container {
 
   /* Button with greater icon in the right */
   .button-arrow {
-    @apply border transition-all hover:opacity-40 cursor-pointer rounded-full absolute bottom-3 right-5 after:content-[""] after:block after:absolute after:right-4 after:top-3 after:transition-all after:h-2 after:w-2 after:hover:translate-x-1 after:border-t after:border-r after:rotate-45;
+    @apply border border-black transition-all hover:opacity-40 cursor-pointer rounded-full relative after:content-[""] after:block after:border-black after:absolute after:right-4 after:top-4 after:transition-all after:h-2 after:w-2 after:hover:translate-x-1 after:border-t after:border-r after:rotate-45;
   }
 }

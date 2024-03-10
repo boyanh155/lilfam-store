@@ -1,15 +1,21 @@
-import React from 'react'
+import React from "react";
 
-type Props = {}
+type Props = {};
 
 const HeaderEndNav = (props: Props) => {
-    return (
-        <div className='flex justify-end content-center gap-7 text-dark-main'>
-            <div className="cursor-pointer transition-opacity hover:opacity-60 text-s text-right">Help</div>
-            <div className="cursor-pointer transition-opacity hover:opacity-60 text-s text-right">Order tracker</div>
-            <div className="cursor-pointer transition-opacity hover:opacity-60 text-s text-right">Become a member</div>
-        </div>
-    )
-}
+  return (
+    <div className="flex justify-end content-center gap-7 text-dark-main">
+      <div className="cursor-pointer transition-opacity opacity-60 hover:opacity-100 text-s text-right">
+        help
+      </div>
+      <div className="cursor-pointer transition-opacity opacity-60 hover:opacity-100 text-s text-right">
+        order tracker
+      </div>
+      <div className="cursor-pointer transition-opacity opacity-60 hover:opacity-100 text-s text-right">
+        become a member
+      </div>
+    </div>
+  );
+};
 
-export default HeaderEndNav
+export default HeaderEndNav;

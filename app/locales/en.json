@@ -1,0 +1,31 @@
+{
+    "Metadata": {
+        "web_title": "Lilfam Store",
+        "web_description": "Our family's store"
+    },
+    "Dictionary": {
+        "men": "men",
+        "women": "women",
+        "sports": "sports",
+        "casual": "casual",
+        "search": "search",
+        "help": "help",
+        "order_tracker": "order tracker",
+        "best_sellers": "best sellers",
+        "new_arrivals": "new arrivals",
+        "whats_hot": "what's hot",
+        "what_people_are_buying": "what people are buying",
+        "buy_now_or_cry_later": "buy now or cry later",
+        "find_a_store": "find a store",
+        "contact_us": "contact us",
+        "send_us_feedback": "send us feedback",
+        "hear_it_first": "hear it first",
+        "get_help": "get help",
+        "shoes": "shoes",
+        "clothing": "clothing",
+        "accessories": "accessories",
+        "brands": "brands",
+        "featured": "featured",
+        "products": "products"
+    }
+}

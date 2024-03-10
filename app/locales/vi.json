@@ -1,0 +1,31 @@
+{
+    "Metadata": {
+        "web_title": "Cửa hàng Lilfam",
+        "web_description": "Cửa hàng của gia đình chúng tôi"
+    },
+    "Dictionary": {
+        "men": "nam",
+        "women": "nữ",
+        "sports": "thể thao",
+        "casuals": "bình thường",
+        "search": "tìm kiếm",
+        "help": "giúp đỡ",
+        "order_tracker": "theo dõi đơn hàng",
+        "best_sellers": "bán chạy nhất",
+        "new_arrivals": "mới về",
+        "whats_hot": "đang hot",
+        "what_people_are_buying": "người ta đang mua gì",
+        "buy_now_or_cry_later": "mua ngay hoặc khóc sau",
+        "find_a_store": "tìm cửa hàng",
+        "contact_us": "liên hệ chúng tôi",
+        "send_us_feedback": "gửi phản hồi cho chúng tôi",
+        "hear_it_first": "nghe đầu tiên",
+        "get_help": "nhận sự giúp đỡ",
+        "shoes": "giày",
+        "clothing": "quần áo",
+        "accessories": "phụ kiện",
+        "brands": "thương hiệu",
+        "featured": "đặc sắc",
+        "products": "sản phẩm"
+    }
+}

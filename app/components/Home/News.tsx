@@ -1,5 +1,5 @@
 import React from "react";
-import { whatshotData } from "./whatshotData/data";
+import { whatshotData } from "./dummyData/whatshot";
 import Image from "next/image";
 import Title from "./common/Title";
 
@@ -8,12 +8,12 @@ type Props = {};
 const News = (props: Props) => {
   return (
     <div className="flex flex-col content-container pt-14 ">
-      <div className="w-full md:text-start text-center pb-10 pt-16">
+      {/* <div className="w-full md:text-start text-center pb-10 pt-16">
         <p className="text-2xl font-bold uppercase text-black">
          
         </p>
-      </div>
-      <Title title=" What&apos;s hot"/>
+      </div> */}
+      <Title title=" What's hot" />
 
       <div className="grid md:grid-cols-4 grid-cols-1 gap-5">
         {whatshotData.map((v, i) => (
