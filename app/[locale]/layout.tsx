@@ -48,10 +48,18 @@ import React from "react";
 
 type Props = {
   children: React.ReactNode;
+  params: {
+    locale: string;
+  };
 };
 
-const layout = ({ children }: Props) => {
-  return <div>{children}</div>;
+const RootLayout = ({ children, params: { locale } }: Props) => {
+  return (
+    <div>
+      {children}
+      {locale}
+    </div>
+  );
 };
 
-export default layout;
+export default RootLayout;
