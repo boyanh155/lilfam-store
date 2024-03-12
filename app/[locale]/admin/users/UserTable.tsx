@@ -2,12 +2,6 @@
 import Link from 'next/link'
 import React, { useState } from 'react'
 
-interface User {
-    id: string,
-    name: string,
-    email: string,
-    [key: string]: string | number,
-}
 
 interface Props {
     sortOrder: string,
@@ -37,7 +31,7 @@ const UserTable = async ({ sortDirection, sortOrder }: Props) => {
     const apiResult = await fetch(`https://jsonplaceholder.typicode.com/users`, {
         cache: 'no-store'
     })
-    const users: User[] = await apiResult.json()
+    const users: UserType[] = await apiResult.json()
     return (
         <table className='table table-bordered'>
             <thead>

@@ -1,10 +1,8 @@
-import React from 'react'
-import Home from '../pages/Home'
+import React from "react";
+import Home from "../pages/Home";
 
-type Props = {}
+const HomePage = () => {
+  return <Home />;
+};
 
-const HomePage = (props: Props) => {
-  return <Home/>
-}
-
-export default HomePage
+export default HomePage;
