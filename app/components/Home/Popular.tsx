@@ -2,13 +2,15 @@ import React from "react";
 import Title from "./common/Title";
 import { popularData } from "./dummyData/popular";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 type Props = {};
 
 const Popular = (props: Props) => {
+  const t = useTranslations("Dictionary");
   return (
     <div className="flex flex-col pt-14 w-screen content-container">
-      <Title title="what people are buying" />
+      <Title title={t("what_people_are_buying")} />
       <div className="flex overflow-x-scroll gap-10 snap-x snap-mandatory">
         <div className=" basis-48 snap-center flex-shrink-0"></div>
         {popularData.map((v, i) => (

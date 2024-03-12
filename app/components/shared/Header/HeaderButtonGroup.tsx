@@ -4,9 +4,11 @@ import userIcon from "@/app/assets/imgs/icons/icon-user.svg";
 import heartIcon from "@/app/assets/imgs/icons/icon-heart.svg";
 import cartIcon from "@/app/assets/imgs/icons/icon-cart.svg";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 type Props = {};
 
 const HeaderButtonGroup = (props: Props) => {
+  const t = useTranslations("Dictionary");
   return (
     <div className="grid grid-cols-3 w-full">
       <div className="col-span-2 flex bg-zinc-100 rounded-box px-4 py-1 h-9">
@@ -30,7 +32,7 @@ const HeaderButtonGroup = (props: Props) => {
           }}
           type="text"
           className="input bg-transparent h-full text-dark-main"
-          placeholder="Search"
+          placeholder={t("search")}
         />
       </div>
       <div className="col-span-1 grid grid-cols-3 content-center justify-items-center">

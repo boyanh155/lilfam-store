@@ -1,8 +1,10 @@
+import { useTranslations } from "next-intl";
 import React from "react";
 
 type Props = {};
 
 const UnderAdvertisement = (props: Props) => {
+  const t = useTranslations("Dictionary");
   return (
     <div className="w-full whitespace-nowrap mt-16  relative leading-10  animate-ben-thanh-market-background-changing h-10 d-flex align-middle bg-light-beige text-dark-main uppercase tracking-widest">
       <span
@@ -11,7 +13,7 @@ const UnderAdvertisement = (props: Props) => {
         }}
         className="block absolute animate-ben-thanh-market-text-runner font-bold"
       >
-        buy now or cry later
+        {t('buy_now_or_cry_later')}
       </span>
       <span
         className="block absolute animate-ben-thanh-market-text-runner font-bold"
@@ -22,7 +24,7 @@ const UnderAdvertisement = (props: Props) => {
           WebkitAnimationDelay: "2s",
         }}
       >
-        buy now or cry later
+        {t('buy_now_or_cry_later')}
       </span>
       <span
         style={{
@@ -33,7 +35,7 @@ const UnderAdvertisement = (props: Props) => {
         }}
         className="block absolute animate-ben-thanh-market-text-runner font-bold"
       >
-        buy now or cry later
+        {t('buy_now_or_cry_later')}
       </span>
       <span
         style={{
@@ -44,7 +46,7 @@ const UnderAdvertisement = (props: Props) => {
         }}
         className="block absolute animate-ben-thanh-market-text-runner font-bold"
       >
-        buy now or cry later
+        {t('buy_now_or_cry_later')}
       </span>
       <span
         style={{
@@ -55,7 +57,7 @@ const UnderAdvertisement = (props: Props) => {
         }}
         className="block absolute animate-ben-thanh-market-text-runner font-bold"
       >
-        buy now or cry later
+        {t('buy_now_or_cry_later')}
       </span>
       <span
         style={{
@@ -66,7 +68,7 @@ const UnderAdvertisement = (props: Props) => {
         }}
         className="block absolute animate-ben-thanh-market-text-runner font-bold"
       >
-        buy now or cry later
+        {t('buy_now_or_cry_later')}
       </span>
     </div>
   );

@@ -1,10 +1,11 @@
 import createMiddleware from "next-intl/middleware";
-import { AppConfig } from "./AppConfig";
+import { AppConfig,pathnames } from "./AppConfig";
 
 export default createMiddleware({
   locales: AppConfig.locales,
   localePrefix: AppConfig.localePrefix,
   defaultLocale: AppConfig.defaultLocale ,
+  pathnames,
 });
 
 export const config = {
@@ -16,6 +17,8 @@ export const config = {
     // all requests that have a locale prefix
     "/(en|vi)/:path*",
 
-
+    // Enable redirects that add missing locales
+    // (e.g. `/pathnames` -> `/en/pathnames`)
+    "/((?!_next|_vercel|.*\\..*).*)",
   ],
 };

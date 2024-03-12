@@ -7,10 +7,11 @@
         "men": "nam",
         "women": "nữ",
         "sports": "thể thao",
-        "casuals": "bình thường",
+        "casuals": "thường ngày",
         "search": "tìm kiếm",
-        "help": "giúp đỡ",
-        "order_tracker": "theo dõi đơn hàng",
+        "help": "hỗ trợ",
+        "order_tracker": "đơn hàng",
+        "become_a_member": "hội viên",
         "best_sellers": "bán chạy nhất",
         "new_arrivals": "mới về",
         "whats_hot": "đang hot",
@@ -22,10 +23,14 @@
         "hear_it_first": "nghe đầu tiên",
         "get_help": "nhận sự giúp đỡ",
         "shoes": "giày",
+        "shop_the_icon": "mua biểu tượng",
         "clothing": "quần áo",
         "accessories": "phụ kiện",
         "brands": "thương hiệu",
-        "featured": "đặc sắc",
-        "products": "sản phẩm"
+        "featured": "nổi bật",
+        "products": "sản phẩm",
+        "freeShippingAdvertise": "miễn phí vận chuyển cho đơn hàng trên 200k",
+        "blackFridayAdvertise": "black friday lên đến 70% cho bộ sưu tập 'lilfarm'"
+
     }
 }

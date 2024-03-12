@@ -1,9 +1,10 @@
+import Men from "@/app/pages/Men";
 import React from "react";
 
 type Props = {};
 
 const MenPage = (props: Props) => {
-  return <div>MenPage</div>;
+  return <Men/>;
 };
 
 export default MenPage;

@@ -1,8 +1,9 @@
-import Link from "next/link";
+// import Link from "next/link";
 import React, { useState } from "react";
 import Dropdown from "../../Home/Dropdown";
 import { MenuItem } from "./menuData/menu";
-// import { Link } from "@/app/libs/i18nNavigation";
+import { useTranslations } from "next-intl";
+import { Link } from "@/app/libs/i18nNavigation";
 type Props = {
   item: MenuItem;
   path: string;
@@ -10,6 +11,7 @@ type Props = {
 
 const NavbarItem = ({ item, path }: Props) => {
   const [isDrop, setIsDrop] = useState(false);
+  const t = useTranslations("Dictionary")
   return (
     <div
       onMouseEnter={() => setIsDrop(true)}
@@ -17,12 +19,10 @@ const NavbarItem = ({ item, path }: Props) => {
     >
       {/* MAIN ITEM */}
       <Link
-        href={item.link}
+        href={`${item.link}`}
         className={`
                 block col-span-1 text-base font-bold text-center subpixel-antialiased uppercase transition-all
                 z-40
-                
-                
                 ${
                   path.split("/")[1] === item.link
                     ? "border-b-2 border-dark-main"
@@ -30,7 +30,7 @@ const NavbarItem = ({ item, path }: Props) => {
                 }
                 `}
       >
-        {item.name}
+        {t(item.name)}
       </Link>
       {/* DROP DOWN */}
       {item.dropdownMenu.length > 0 && isDrop && (

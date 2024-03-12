@@ -15,6 +15,11 @@ export async function GET(req: NextRequest, { params: { id } }: Params) {
                 id: Number.parseInt(id)
             }
         })
+        if(!currentProduct) return NextResponse.json({
+            error:`Product not found`
+        },{
+            status:404
+        })
         return NextResponse.json({
             data: currentProduct
         })

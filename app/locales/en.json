@@ -7,11 +7,12 @@
         "men": "men",
         "women": "women",
         "sports": "sports",
-        "casual": "casual",
+        "casuals": "casuals",
         "search": "search",
         "help": "help",
         "order_tracker": "order tracker",
         "best_sellers": "best sellers",
+        "become_a_member": "become a member",
         "new_arrivals": "new arrivals",
         "whats_hot": "what's hot",
         "what_people_are_buying": "what people are buying",
@@ -26,6 +27,9 @@
         "accessories": "accessories",
         "brands": "brands",
         "featured": "featured",
-        "products": "products"
+        "shop_the_icon": "shop the icon",
+        "products": "products",
+        "freeShippingAdvertise": "free shipping for bills from 200k",
+        "blackFridayAdvertise": "black friday upto 70% for 'lilfam' collection"
     }
 }

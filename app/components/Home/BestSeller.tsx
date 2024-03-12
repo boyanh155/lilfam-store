@@ -2,13 +2,15 @@ import React from "react";
 import { bestSellerData } from "./dummyData/bestseller";
 import Image from "next/image";
 import Title from "./common/Title";
+import { useTranslations } from "next-intl";
 
 type Props = {};
 
 const BestSeller = (props: Props) => {
+  const t = useTranslations("Dictionary")
   return (
     <div className="flex flex-col content-container ">
-      <Title title="best seller" startDirection="text-center" />
+      <Title title={t("best_sellers")} startDirection="text-center" />
 
       <div className="grid row-span-1 mt-14 grid-rows-1 grid-cols-1 gap-20 md:grid-cols-3">
         {bestSellerData.map((v, i) => (

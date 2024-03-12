@@ -2,7 +2,7 @@
 // import { NextIntlClientProvider, useMessages } from "next-intl";
 
 // import { AppConfig } from "@/app/utils/AppConfig";
-// import { Space_Grotesk } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 
 // import type { typeOfLocale } from "@/app/utils/AppConfig";
 
@@ -12,11 +12,11 @@
 //     locale: typeOfLocale;
 //   };
 // }
-// const SpaceGrotesk = Space_Grotesk({
-//   weight: ["300", "400", "700", "500"],
-//   style: ["normal"],
-//   subsets: ["latin"],
-// });
+const SpaceGrotesk = Space_Grotesk({
+  weight: ["300", "400", "700", "500"],
+  style: ["normal"],
+  subsets: ["latin"],
+});
 
 // export default function RootLayout({
 //   children,
@@ -30,21 +30,14 @@
 //   //  message
 //   const messages = useMessages();
 
-//   return (
-//     <html lang={locale} data-theme="winter">
-//       <body className={SpaceGrotesk.className}>
-//         {/* <NextIntlClientProvider messages={messages} locale={locale}>
-//           {children}
-//         </NextIntlClientProvider> */}
-//         <NextIntlClientProvider locale={locale} messages={messages}>
-//           {children}
-//         </NextIntlClientProvider>
-//       </body>
-//     </html>
-//   );
-// }
-
-import React from "react";
+import { unstable_setRequestLocale } from "next-intl/server";
+import React, { Suspense } from "react";
+import { AppConfig } from "../utils/AppConfig";
+import TopAdvertisement from "../components/shared/Header/TopAdvertisement";
+import HeaderMain from "../components/shared/Header/HeaderMain";
+import Loading from "../components/Common/Loading";
+import FooterMain from "../components/shared/Footer/FooterMain";
+import { NextIntlClientProvider, useMessages } from "next-intl";
 
 type Props = {
   children: React.ReactNode;
@@ -53,13 +46,29 @@ type Props = {
   };
 };
 
-const RootLayout = ({ children, params: { locale } }: Props) => {
+export function generateStaticParams() {
+  return AppConfig.locales.map((locale) => ({ locale }));
+}
+
+const AdminLayout = ({ children, params: { locale } }: Props) => {
+  // Enable static rendering
+  unstable_setRequestLocale(locale);
+
+  const messages = useMessages();
   return (
-    <div>
-      {children}
-      {locale}
-    </div>
+    <html lang={locale} data-theme="winter">
+      <body className={SpaceGrotesk.className}>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <TopAdvertisement />
+          <HeaderMain />
+          <main>
+            <Suspense fallback={<Loading />}>{children}</Suspense>
+          </main>
+          <FooterMain />
+        </NextIntlClientProvider>
+      </body>
+    </html>
   );
 };
 
-export default RootLayout;
+export default AdminLayout;

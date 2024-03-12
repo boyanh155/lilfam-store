@@ -2,10 +2,12 @@ import React from "react";
 import { whatshotData } from "./dummyData/whatshot";
 import Image from "next/image";
 import Title from "./common/Title";
+import { useTranslations } from "next-intl";
 
 type Props = {};
 
 const News = (props: Props) => {
+  const t = useTranslations('Dictionary')
   return (
     <div className="flex flex-col content-container pt-14 ">
       {/* <div className="w-full md:text-start text-center pb-10 pt-16">
@@ -13,7 +15,7 @@ const News = (props: Props) => {
          
         </p>
       </div> */}
-      <Title title=" What's hot" />
+      <Title title={t('whats_hot')} />
 
       <div className="grid md:grid-cols-4 grid-cols-1 gap-5">
         {whatshotData.map((v, i) => (
