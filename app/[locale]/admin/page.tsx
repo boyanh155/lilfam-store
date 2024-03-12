@@ -1,10 +1,7 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import SidebarAdmin from "./SidebarAdmin";
-interface Props {
-  children: ReactNode;
-}
 
-const AdminLayout = ({ children }: Props) => {
+const AdminLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="flex bg-gray-50  mr">
       <SidebarAdmin />
