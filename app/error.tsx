@@ -7,6 +7,7 @@ type Props = {
 }
 
 const UnexpectedErrorPage = ({ error, reset }: Props) => {
+    console.log('GII')
     return (
         <div>An unexpected error has occurred.
 
