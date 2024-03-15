@@ -1,3 +1,5 @@
+import ProductMain from "@/app/components/Product/ProductMain";
+
 import React from "react";
 
 type Props = {
@@ -6,18 +8,8 @@ type Props = {
   };
 };
 
-const ProductPage = async ({ params: { id } }: Props) => {
-  const productResult = await fetch(
-    `http://localhost:3000/api/products/${id}`,
-    {
-      cache: "force-cache",
-    }
-  );
-
-  console.log(productResult);
-  const product = await productResult.json();
-  console.log(product);
-  return <div></div>;
+const ProductPage = ({ params: { id } }: Props) => {
+  return <ProductMain id={id} />;
   // return <div>Product Page</div>;
 };
 

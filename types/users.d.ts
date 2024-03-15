@@ -5,6 +5,10 @@ declare type UserType = {
   [key: string]: string | number;
 };
 
+declare type UserRequestBody = {
+  [key: string]: string | number;
+} & UserType;
+
 declare type UserLocalStorageType = {
   user: UserType;
   token: string;

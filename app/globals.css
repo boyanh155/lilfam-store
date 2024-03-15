@@ -61,3 +61,15 @@ body .content-container {
     @apply border border-black transition-all hover:opacity-40 cursor-pointer rounded-full relative after:content-[""] after:block after:border-black after:absolute after:right-4 after:top-4 after:transition-all after:h-2 after:w-2 after:hover:translate-x-1 after:border-t after:border-r after:rotate-45;
   }
 }
+
+@layer utilities {
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}

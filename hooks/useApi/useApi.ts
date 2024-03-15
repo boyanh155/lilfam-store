@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import { QueryClient, useMutation, useQuery } from "@tanstack/react-query";
 
 export let baseUrl = "http://localhost:3000/api";
@@ -25,7 +25,7 @@ export const config = () => {
 };
 
 //interceptor
-export const api = async (method: string, url: string, obj = {}) => {
+export async function api(method: string, url: string, obj = {}) {
   try {
     switch (method) {
       case "GET":
@@ -49,15 +49,21 @@ export const api = async (method: string, url: string, obj = {}) => {
           .then((res) => res.data);
     }
   } catch (error: any) {
-    const err = error?.response?.data?.error || "Something went wrong";
+    const errRes = error?.response;
+
+    const err = errRes?.data?.error || "Something went wrong";
     const expectedErrors = ["invalid signature", "jwt expired"];
     if (expectedErrors.includes(err)) {
-      localStorage.removeItem("userInfo");
+      localStorage.removeItem("user");
       window.location.reload();
     }
-    throw err;
+    throw {
+      status: errRes?.status,
+      message: err,
+      error,
+    };
   }
-};
+}
 
 type Method = "GET" | "POST" | "PUT" | "DELETE";
 
@@ -67,17 +73,21 @@ interface ApiHookParams {
   url: string;
 }
 
-export default function useApi({ key, method, url }: ApiHookParams) {
+export default function useApi<ResponseBody>({
+  key,
+  method,
+  url,
+}: ApiHookParams) {
   const queryClient = new QueryClient();
+
   switch (method) {
     case "GET":
       // eslint-disable-next-line
-      const get = useQuery({
+      const get = useQuery<ResponseBody>({
         queryKey: key,
         queryFn: () => api(method, url, {}),
         retry: 0,
       });
-
       return { get };
 
     case "POST":
