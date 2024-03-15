@@ -1,9 +1,10 @@
 import { formatVND } from "@/app/libs/format";
+import useCartStore, { addToCartStoreState } from "@/stores/useCartStore";
 import useProductStore, {
   selectSpecificProductStoreState,
   setSpecificProductStoreState,
 } from "@/stores/useProductStore";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 type Props = {
   product: ProductResponseType;
@@ -11,7 +12,10 @@ type Props = {
 
 const Information = ({ product }: Props) => {
   const { category, specificList, genericProduct } = product;
-  const [pickedSize, setPickedSize] = useState<number | null>(null);
+  const [pickedSize, setPickedSize] = useState<{
+    id: number;
+    name: string;
+  } | null>(null);
   const [isSubmit, setIsSubmit] = useState(false);
   // const [selectedSpecific, setSelectedSpecific] = useState(
   //   specificList[0].specificId
@@ -20,8 +24,23 @@ const Information = ({ product }: Props) => {
   const currentSpecific = useProductStore(selectSpecificProductStoreState);
   const setSpecific = useProductStore(setSpecificProductStoreState);
 
+  // set cart state
+  const addToCart = useCartStore(addToCartStoreState);
+  useEffect(() => {
+    setPickedSize(null);
+  }, [currentSpecific]);
+
   const addToCartClickHandler = () => {
     setIsSubmit(true);
+    if (!pickedSize) return;
+    // add to cart
+    addToCart(
+      currentSpecific!,
+      genericProduct!,
+      pickedSize.id,
+      pickedSize.name,
+      1
+    );
   };
   return (
     <div className="flex flex-col">
@@ -84,11 +103,16 @@ const Information = ({ product }: Props) => {
               key={v.id}
               className={
                 "border grid-cols-1 font-semibold text-black rounded text-center py-2 cursor-pointer transition-all hover:opacity-60 " +
-                `${v.id === pickedSize ? "border-black" : "border-zinc-300"}`
+                `${
+                  v.id === pickedSize?.id ? "border-black" : "border-zinc-300"
+                }`
               }
               onClick={() => {
                 setIsSubmit(false);
-                setPickedSize(v.id!);
+                setPickedSize({
+                  id: v.id!,
+                  name: v.name!,
+                });
               }}
             >
               {v.name}

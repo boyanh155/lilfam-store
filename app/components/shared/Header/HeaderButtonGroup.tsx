@@ -5,6 +5,8 @@ import heartIcon from "@/app/assets/imgs/icons/icon-heart.svg";
 import cartIcon from "@/app/assets/imgs/icons/icon-cart.svg";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import useCartStore, { selectCartStoreState } from "@/stores/useCartStore";
+import CartClient from "./CartClient";
 type Props = {};
 
 const HeaderButtonGroup = (props: Props) => {
@@ -46,11 +48,7 @@ const HeaderButtonGroup = (props: Props) => {
           src={heartIcon}
           alt="heart"
         />
-        <Image
-          className="col-span-1 hover:opacity-60 cursor-pointer transition-opacity text-dark-main"
-          src={cartIcon}
-          alt="cart"
-        />
+        <CartClient />
       </div>
     </div>
   );
