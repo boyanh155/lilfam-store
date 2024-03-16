@@ -29,6 +29,8 @@ export function generateStaticParams() {
   return AppConfig.locales.map((locale) => ({ locale }));
 }
 
+
+
 const AdminLayout = ({ children, params: { locale } }: Props) => {
   // Enable static rendering
   unstable_setRequestLocale(locale);

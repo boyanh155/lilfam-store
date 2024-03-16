@@ -3,6 +3,7 @@ import { persist } from "zustand/middleware";
 
 export interface CartStoreState {
   cart: CartType;
+  newItem: CartItemType | null;
 }
 
 export interface CartStore extends CartStoreState {
@@ -11,6 +12,7 @@ export interface CartStore extends CartStoreState {
     genericProduct: ProductType,
     sizeId: number,
     sizeName: string,
+    categoryName: string,
     quantity: number
   ) => void;
   removeFromCart: (
@@ -26,6 +28,7 @@ const initialState: Pick<CartStore, keyof CartStoreState> = {
     total: 0,
     items: [],
   },
+  newItem: null,
 };
 
 const useCartStore = create<CartStore>()(
@@ -37,6 +40,7 @@ const useCartStore = create<CartStore>()(
         genericProduct,
         sizeId,
         sizeName,
+        categoryName,
         quantity
       ) =>
         set((prevState) => {
@@ -60,12 +64,22 @@ const useCartStore = create<CartStore>()(
               genericProduct,
               sizeId,
               sizeName,
+              categoryName,
               quantity,
               total: addPrice,
             });
           }
           return {
             ...prevState,
+            newItem: {
+              specificProduct,
+              genericProduct,
+              sizeId,
+              sizeName,
+              categoryName,
+              quantity,
+              total: addPrice,
+            },
             cart: {
               items: [...newItems],
               quantity: prevState.cart.quantity + addQuantity,
@@ -124,5 +138,9 @@ export const removeFromCartStoreState: (
 export const selectCartStoreState: (state: any) => CartStoreState["cart"] = (
   state
 ) => state.cart;
+
+export const selectNewItemStoreState: (
+  state: any
+) => CartStoreState["newItem"] = (state) => state.newItem;
 
 export default useCartStore;

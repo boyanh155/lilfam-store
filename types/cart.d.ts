@@ -3,6 +3,7 @@ declare type CartItemType = {
   genericProduct: ProductType;
   sizeId: number;
   sizeName: string;
+  categoryName: string;
   quantity: number;
   total: number;
 };

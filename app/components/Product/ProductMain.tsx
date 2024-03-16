@@ -8,6 +8,7 @@ import RecommendList from "./RecommendList";
 import useProductStore, {
   setSpecificProductStoreState,
 } from "@/stores/useProductStore";
+import CartPopup from "./CartPopup";
 
 type Props = {
   id: string;
@@ -27,6 +28,7 @@ const ProductMain = ({ id }: Props) => {
     <div className="content-container flex flex-col content-center justify-between">
       <ProductInfo product={_api?.data!} />
       <RecommendList />
+      <CartPopup />
     </div>
   );
 };

@@ -31,5 +31,16 @@
         "products": "products",
         "freeShippingAdvertise": "free shipping for bills from 200k",
         "blackFridayAdvertise": "black friday upto 70% for 'lilfam' collection"
+    },
+    "Product": {
+        "add_to_cart": "add to cart",
+        "buy_now": "buy now",
+        "check_out": "check out",
+        "size_guide": "size guide",
+        "select_size": "select size",
+        "added_to_cart": "added to cart",
+        "favourite": "favourite",
+        "you_might_also_like": "you might also like",
+        "view_cart": "view cart"
     }
 }

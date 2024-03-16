@@ -31,6 +31,16 @@
         "products": "sản phẩm",
         "freeShippingAdvertise": "miễn phí vận chuyển cho đơn hàng trên 200k",
         "blackFridayAdvertise": "black friday lên đến 70% cho bộ sưu tập 'lilfarm'"
-
+    },
+    "Product": {
+        "add_to_cart": "thêm vào giỏ hàng",
+        "buy_now": "mua ngay",
+        "check_out": "thanh toán",
+        "size_guide": "hướng dẫn chọn size",
+        "select_size": "chọn size",
+        "added_to_cart": "đã thêm vào giỏ hàng",
+        "favourite": "yêu thích",
+        "you_might_also_like": "bạn cũng có thể thích",
+        "view_cart": "giỏ hàng"
     }
 }

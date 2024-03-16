@@ -4,6 +4,7 @@ import useProductStore, {
   selectSpecificProductStoreState,
   setSpecificProductStoreState,
 } from "@/stores/useProductStore";
+import { useTranslations } from "next-intl";
 import React, { useEffect, useState } from "react";
 
 type Props = {
@@ -17,10 +18,7 @@ const Information = ({ product }: Props) => {
     name: string;
   } | null>(null);
   const [isSubmit, setIsSubmit] = useState(false);
-  // const [selectedSpecific, setSelectedSpecific] = useState(
-  //   specificList[0].specificId
-  // );
-  // store
+
   const currentSpecific = useProductStore(selectSpecificProductStoreState);
   const setSpecific = useProductStore(setSpecificProductStoreState);
 
@@ -28,6 +26,7 @@ const Information = ({ product }: Props) => {
   const addToCart = useCartStore(addToCartStoreState);
   useEffect(() => {
     setPickedSize(null);
+    setIsSubmit(false);
   }, [currentSpecific]);
 
   const addToCartClickHandler = () => {
@@ -39,9 +38,11 @@ const Information = ({ product }: Props) => {
       genericProduct!,
       pickedSize.id,
       pickedSize.name,
+      category!.name!,
       1
     );
   };
+  const t = useTranslations("Product");
   return (
     <div className="flex flex-col">
       <div className="capitalize ">{category?.name}</div>
@@ -87,9 +88,9 @@ const Information = ({ product }: Props) => {
               isSubmit && !pickedSize ? "text-red-600" : "text-black"
             } mb-3 font-semibold`}
           >
-            select size
+            {t("select_size")}
           </div>
-          <div className="capitalize text-zinc-400">size guide</div>
+          <div className="capitalize text-zinc-400">{t("size_guide")}</div>
         </div>
         {/* SIZE LIST */}
         <ul
@@ -126,14 +127,14 @@ const Information = ({ product }: Props) => {
         {/* Button group */}
         <div className="grid grid-rows-2 gap-2 pt-7">
           <button
-            className="rounded-full hover:opacity-70 transition-all  text-white w-full py-3 font-semibold bg-[#A09A93] "
+            className="rounded-full hover:opacity-70 capitalize transition-all  text-white w-full py-3 font-semibold bg-[#A09A93] "
             onClick={addToCartClickHandler}
           >
-            Add to cart
+            {t("add_to_cart")}
           </button>
 
-          <button className="rounded-full hover:opacity-70 transition-all border text-black font-semibold  w-full py-3 border-zinc-300 ">
-            Favourite
+          <button className="capitalize rounded-full hover:opacity-70 transition-all border text-black font-semibold  w-full py-3 border-zinc-300 ">
+            {t("favourite")}
           </button>
         </div>
         {/* Description */}

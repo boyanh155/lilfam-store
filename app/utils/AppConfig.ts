@@ -4,7 +4,7 @@ import type {
 } from "@/node_modules/next-intl/dist/types/src/shared/types";
 // FIXME: Update this configuration file based on your project information
 
- const locales = ["en", "vi"] as const;
+const locales = ["en", "vi"] as const;
 
 export type typeOfLocale = (typeof locales)[number];
 export type typeOfLocales = typeof locales;
@@ -48,7 +48,7 @@ export const pathnames = {
     en: "/products",
     vi: "/san-pham",
   },
-  "/sports":{
+  "/sports": {
     en: "/sports",
     vi: "/the-thao",
   },
@@ -56,7 +56,14 @@ export const pathnames = {
     en: "/casuals",
     vi: "/thuong-ngay",
   },
+  "/cart": {
+    en: "/cart",
+    vi: "/gio-hang",
+  },
+  "/checkout": {
+    en: "/checkout",
+    vi: "/thanh-toan",
+  },
 } satisfies Pathnames<typeOfLocales>;
-
 
 export type AppPathnames = keyof typeof pathnames;

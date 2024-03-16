@@ -11,13 +11,15 @@ const CartClient = (props: Props) => {
   const cart = useCartStore(selectCartStoreState);
 
   return (
-    <div>
+    <div className="relative">
       <Image
         className="col-span-1 hover:opacity-60 cursor-pointer transition-opacity text-dark-main"
         src={cartIcon}
         alt="cart"
       />
-      <div>{cart.quantity}</div>
+      <div className="absolute -top-2 -right-2.5 bg-dark-main rounded-box text-white h-4 w-4 text-xs text-center">
+        {cart.quantity}
+      </div>
     </div>
   );
 };

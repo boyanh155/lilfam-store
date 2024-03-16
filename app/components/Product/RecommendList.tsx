@@ -1,5 +1,6 @@
 import React from "react";
 import PlaceHolderImage from "../Common/PlaceHolderImage";
+import { useTranslations } from "next-intl";
 
 type Props = {};
 
@@ -18,10 +19,11 @@ const list = [
   },
 ];
 const RecommendList = (props: Props) => {
+  const t = useTranslations("Product");
   return (
     <div className="mt-24">
       <div className="capitalize font-semibold text-black text-xl">
-        you might also like
+        {t("you_might_also_like")}
       </div>
       <div className="grid grid-cols-1 md:grid-cols-4 mt-6 ">
         {list.map((v, id) => (
