@@ -10,6 +10,7 @@ type Props = {
 };
 
 const NavbarItem = ({ item, path }: Props) => {
+  console.log(path)
   const [isDrop, setIsDrop] = useState(false);
   const t = useTranslations("Dictionary")
   return (

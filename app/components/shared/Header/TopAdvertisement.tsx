@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import React, { use } from "react";
+import React from "react";
 
 type Props = {};
 

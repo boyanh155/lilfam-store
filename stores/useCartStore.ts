@@ -20,6 +20,7 @@ export interface CartStore extends CartStoreState {
     sizeId: number,
     quantity: number
   ) => void;
+  resetNewItem: () => void;
 }
 
 const initialState: Pick<CartStore, keyof CartStoreState> = {
@@ -120,6 +121,14 @@ const useCartStore = create<CartStore>()(
             },
           };
         }),
+      resetNewItem: () => {
+        set((prevState) => {
+          return {
+            ...prevState,
+            newItem: null,
+          };
+        });
+      },
     }),
     {
       name: "user_cart_store",
@@ -142,5 +151,9 @@ export const selectCartStoreState: (state: any) => CartStoreState["cart"] = (
 export const selectNewItemStoreState: (
   state: any
 ) => CartStoreState["newItem"] = (state) => state.newItem;
+
+export const resetNewItemStoreState: (
+  state: any
+) => CartStore["resetNewItem"] = (state) => state.resetNewItem;
 
 export default useCartStore;

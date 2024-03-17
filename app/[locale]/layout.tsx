@@ -36,6 +36,7 @@ const AdminLayout = ({ children, params: { locale } }: Props) => {
   unstable_setRequestLocale(locale);
 
   // verify locale
+
   if (!AppConfig.locales.includes(locale)) notFound();
 
   const messages = useMessages();

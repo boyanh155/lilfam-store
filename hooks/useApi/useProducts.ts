@@ -16,7 +16,7 @@ const useGetProduct = (id: string) => {
     method: "GET",
     url: `products/${id}`,
   });
-
+console.log(getApi.get?.error?.status);
   if (getApi.get?.error?.status === 404) return notFound();
 
   return getApi.get;

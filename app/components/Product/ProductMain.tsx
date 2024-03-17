@@ -9,7 +9,6 @@ import useProductStore, {
   setSpecificProductStoreState,
 } from "@/stores/useProductStore";
 import CartPopup from "./CartPopup";
-
 type Props = {
   id: string;
 };
@@ -17,6 +16,10 @@ type Props = {
 const ProductMain = ({ id }: Props) => {
   const _api = useGetProduct(id);
   const setSpecific = useProductStore(setSpecificProductStoreState);
+
+  // useEffect(() => {
+  //   resetNewItem();
+  // }, []);
   useEffect(() => {
     if (!_api?.data) return;
     setSpecific(_api?.data?.specificList[0]!);

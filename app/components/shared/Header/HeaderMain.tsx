@@ -11,7 +11,7 @@ const HeaderMain = (props: Props) => {
   return (
     <div className="bg-white navbar  justify-between items-end content-container">
       <div className="flex-none">
-        <Link href="/">
+        <Link href="/en">
           <Image alt="Lilshooz" src={LogoLightHeader} className="h-25 w-25 " />
         </Link>
       </div>

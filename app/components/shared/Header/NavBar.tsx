@@ -17,7 +17,7 @@ const NavBar = ({ }: Props) => {
     return (
         <div className='grid grid-cols-4 gap-x-12 text-dark-main '>
             {
-                menuData.map((v, index) => <NavbarItem key={index} path={path} item={v} />)
+                menuData.map((v, index) => <NavbarItem key={index} path={path!} item={v} />)
             }
 
         </div>

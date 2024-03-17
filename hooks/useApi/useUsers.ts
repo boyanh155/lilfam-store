@@ -7,6 +7,7 @@ const useGetUser = (id: string) => {
     method: "GET",
     url: `users/${id}`,
   });
+  console.log(getApi.get?.error?.status);
   if (getApi.get?.error?.status === 404) return notFound();
   return getApi?.get;
 };

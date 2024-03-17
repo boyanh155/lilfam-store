@@ -13,6 +13,7 @@ class ApiError extends BaseError {
 }
 class NotFoundError extends ApiError {
   constructor() {
+    console.log("Not found");
     super("Not found", 404);
   }
 }

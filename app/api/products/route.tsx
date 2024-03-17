@@ -3,7 +3,7 @@ import { prisma } from '@/prisma/client';
 import schema from './scheme';
 
 export async function GET(req: NextRequest) {
-    const products = await prisma.product.findMany()
+    const products = await prisma.generic_product.findMany()
     if (!products) return NextResponse.json({ message: 'Products not found' }, { status: 404 })
     return NextResponse.json({
         list: products,
@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
         const validation = schema.safeParse(body)
         if (!validation.success) return NextResponse.json({ message: 'Bad request' }, { status: 400 })
 
-        const createdProduct = await prisma.product.create({
+        const createdProduct = await prisma.generic_product.create({
             data: body
         })
         return NextResponse.json({
