@@ -26,6 +26,7 @@ const ProductMain = ({ id }: Props) => {
   }, [_api?.isPending]);
 
   if (_api?.isLoading) return <Loading />;
+  if(!_api?.data) return <div>Missing product</div>
 
   return (
     <div className="content-container flex flex-col content-center justify-between">

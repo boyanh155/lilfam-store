@@ -53,7 +53,9 @@ const config: Config = {
           "bt-text-jumper 2s infinite alternate linear",
       },
     },
-  
+    letterSpacing: {
+      widest: ".25em",
+    },
     screens: {
       sm: "360px",
       md: "640px",

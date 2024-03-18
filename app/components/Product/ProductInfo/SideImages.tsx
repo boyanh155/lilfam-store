@@ -21,7 +21,7 @@ const SideImages = ({ product, setMainImageSrc }: Props) => {
     <div className=" h-full  relative">
       <div className=" absolute top-0 left-0 w-full h-8 bg-gradient-to-b from-white to-transparent opacity-90 z-10"></div>
       <ul className="no-scrollbar flex flex-col gap-2 overflow-y-scroll  h-full">
-        {product.specificList
+        {product && product.specificList
           .find((v) => v.specificId === specific?.specificId)
           ?.images.map((v, id) => {
             return (

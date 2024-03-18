@@ -20,9 +20,10 @@ const CartPopup = (props: Props) => {
   const _resetNewItem = useCartStore(resetNewItemStoreState);
   const resetNewItem = () => _resetNewItem();
   const t = useTranslations("Product");
-  useEffect(() => {
-    setTimeout(resetNewItem, 5000);
-  }, [newItem]);
+  console.log('cart popup')
+  // useEffect(() => {
+  //   setTimeout(resetNewItem, 5000);
+  // }, [newItem]);
   return (
     newItem && (
       <div

@@ -15,7 +15,6 @@ import Loading from "../components/Common/Loading";
 import FooterMain from "../components/shared/Footer/FooterMain";
 import { NextIntlClientProvider, useMessages } from "next-intl";
 import { notFound } from "next/navigation";
-import { QueryClientProvider } from "@tanstack/react-query";
 import Providers from "../libs/Provider";
 
 type Props = {

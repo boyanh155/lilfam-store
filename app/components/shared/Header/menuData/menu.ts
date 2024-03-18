@@ -12,7 +12,7 @@ export const menuData: Array<MenuItem> = [{
     link: '/men',
     dropdownMenu: dropdownSexualData,
 }, {
-    name: 'women',
+    name: 'women', 
     link: '/women',
     dropdownMenu: dropdownSexualData,
 
